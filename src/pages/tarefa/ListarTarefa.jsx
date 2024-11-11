@@ -14,7 +14,6 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import Modal from '@mui/material/Modal';
-import Grid from '@mui/material/Grid';
 
 import CriarTarefa from './CriarTarefa';
 import EditarTarefa from './EditarTarefa';
@@ -76,38 +75,38 @@ const ListarTarefa = () => {
 
   return (
     <>
-      <Card>
+      <Card sx={{ backgroundColor: '#333', color: '#fff' }}>
         <CardHeader title="Tarefas" subheader="Listagem de Tarefas" />
         <CardContent>
-          <TableContainer component={Paper}>
+          <TableContainer component={Paper} sx={{ backgroundColor: '#444' }}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
               <TableHead>
                 <TableRow>
-                  <TableCell>#</TableCell>
-                  <TableCell>Título</TableCell>
-                  <TableCell align="right">Descrição</TableCell>
-                  <TableCell align="right">Data de Início</TableCell>
-                  <TableCell align="right">Data de Finalização</TableCell>
-                  <TableCell align="right">Status</TableCell>
-                  <TableCell align="right">Recurso</TableCell>
-                  <TableCell align="center">Ações</TableCell>
+                  <TableCell sx={{ color: '#fff' }}>#</TableCell>
+                  <TableCell sx={{ color: '#fff' }}>Título</TableCell>
+                  <TableCell align="right" sx={{ color: '#fff' }}>Descrição</TableCell>
+                  <TableCell align="right" sx={{ color: '#fff' }}>Data de Início</TableCell>
+                  <TableCell align="right" sx={{ color: '#fff' }}>Data de Finalização</TableCell>
+                  <TableCell align="right" sx={{ color: '#fff' }}>Status</TableCell>
+                  <TableCell align="right" sx={{ color: '#fff' }}>Recurso</TableCell>
+                  <TableCell align="center" sx={{ color: '#fff' }}>Ações</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {tarefas.map((row, index) => (
                   <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                    <TableCell>{row.idTarefa}</TableCell>
-                    <TableCell>{row.tituloTarefa}</TableCell>
-                    <TableCell align="right">{row.descricaoTarefa}</TableCell>
-                    <TableCell align="right">{row.inicioTarefa}</TableCell>
-                    <TableCell align="right">{row.fimTarefa}</TableCell>
-                    <TableCell align="right">{row.statusTarefa}</TableCell>
-                    <TableCell align="right">{row.recursoTarefa}</TableCell>
+                    <TableCell sx={{ color: '#fff' }}>{row.idTarefa}</TableCell>
+                    <TableCell sx={{ color: '#fff' }}>{row.tituloTarefa}</TableCell>
+                    <TableCell align="right" sx={{ color: '#fff' }}>{row.descricaoTarefa}</TableCell>
+                    <TableCell align="right" sx={{ color: '#fff' }}>{row.inicioTarefa}</TableCell>
+                    <TableCell align="right" sx={{ color: '#fff' }}>{row.fimTarefa}</TableCell>
+                    <TableCell align="right" sx={{ color: '#fff' }}>{row.statusTarefa}</TableCell>
+                    <TableCell align="right" sx={{ color: '#fff' }}>{row.recursoTarefa}</TableCell>
                     <TableCell align="center">
-                      <Button variant="contained" color="success" onClick={() => handleEditar(row.idTarefa)}>
+                      <Button variant="contained" sx={{ backgroundColor: '#666', color: '#fff' }} onClick={() => handleEditar(row.idTarefa)}>
                         <EditIcon fontSize="small" />
                       </Button>
-                      <Button variant="contained" color="error" onClick={() => handleDeletar(row.idTarefa)}>
+                      <Button variant="contained" sx={{ backgroundColor: '#999', color: '#fff' }} onClick={() => handleDeletar(row.idTarefa)}>
                         <DeleteIcon fontSize="small" />
                       </Button>
                     </TableCell>
@@ -118,10 +117,10 @@ const ListarTarefa = () => {
           </TableContainer>
         </CardContent>
         <CardActions>
-          <Button size="small" variant="contained" onClick={handleOpen}>
+          <Button size="small" variant="contained" sx={{ backgroundColor: '#666', color: '#fff' }} onClick={handleOpen}>
             Criar Tarefa
           </Button>
-          <Button size="small" variant="outlined">
+          <Button size="small" variant="outlined" sx={{ borderColor: '#666', color: '#fff' }}>
             Cancelar
           </Button>
         </CardActions>
